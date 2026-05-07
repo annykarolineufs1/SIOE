@@ -31,14 +31,6 @@ st.markdown("""
     margin-bottom: 30px;
 }
 
-.card {
-    background-color: #1E293B;
-    padding: 20px;
-    border-radius: 15px;
-    margin-bottom: 25px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
-}
-
 .stButton button {
     background-color: #22C55E;
     color: black;
@@ -77,13 +69,6 @@ st.markdown("""
 st.markdown("""
 <div class="subtitulo">
 Sistema Inteligente de Organização de E-mails
-</div>
-""", unsafe_allow_html=True)
-
-# CARD CENTRAL
-st.markdown("""
-<div class="card">
-O sistema realiza análise automática de e-mails, classificando mensagens e auxiliando na tomada de decisão.
 </div>
 """, unsafe_allow_html=True)
 
