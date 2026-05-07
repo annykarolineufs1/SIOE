@@ -6,23 +6,20 @@ st.set_page_config(
     layout="centered"
 )
 
-st.markdown("""
-<style>
+st.title("📧 SIOE")
 
-.stApp {
-    background-color: #0F172A;
-}
+st.markdown(
+    "<h2 style='color:#22C55E;'>Sistema Inteligente de Organização de E-mails</h2>",
+    unsafe_allow_html=True
+)
 
-h1 {
-    color: #22C55E;
-    text-align: center;
-}
+st.write(
+    "O sistema analisa automaticamente os e-mails e auxilia na tomada de decisão."
+)
 
-.stButton button {
-    background-color: #22C55E;
-    color: black;
-    border-radius: 12px;
-    height: 50px;
-    width: 100%;
-    font-size: 18px;
-    border:
+email = st.text_area(
+    "Cole o conteúdo do e-mail:",
+    height=200
+)
+
+if st.button("AN
