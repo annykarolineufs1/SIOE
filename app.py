@@ -50,12 +50,15 @@ st.markdown("<h1>📧 SIOE</h1>", unsafe_allow_html=True)
 
 st.markdown("""
 <div class="card">
-Sistema Inteligente de Organização de E-mails
+<h3>Sistema Inteligente de Organização de E-mails</h3>
+<p>
+O sistema analisa automaticamente os e-mails e fornece suporte para tomada de decisão.
+</p>
 </div>
 """, unsafe_allow_html=True)
 
 email = st.text_area(
-    "Cole o e-mail:",
+    "Cole o conteúdo do e-mail:",
     height=200
 )
 
@@ -63,14 +66,21 @@ if st.button("ANALISAR"):
 
     texto = email.lower()
 
-    if "urgente" in texto or "agora" in texto:
-        st.error("🔴 URGENTE")
+    if "urgente" in texto or "agora" in texto or "imediato" in texto:
 
-    elif "senha" in texto or "link" in texto:
-        st.warning("⚠️ MALICIOSO")
+        st.error("🔴 E-mail classificado como URGENTE")
 
-    elif "prazo" in texto or "reunião" in texto:
-        st.info("🟡 IMPORTANTE")
+        st.markdown("""
+        <div class="card">
+        <h4>Recomendação do Sistema</h4>
+        <p>Confirmar urgência antes de tomar a decisão.</p>
+        </div>
+        """, unsafe_allow_html=True)
 
-    else:
-        st.success("🟢 NORMAL")
+    elif "senha" in texto or "link" in texto or "download" in texto:
+
+        st.warning("⚠️ E-mail classificado como MALICIOSO")
+
+        st.markdown("""
+        <div class="card">
+        <
