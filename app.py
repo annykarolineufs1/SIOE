@@ -13,9 +13,9 @@ st.markdown("""
     }
 
     h1 {
-    color: #16A34A;
-    text-align: center;
-}
+        color: #16A34A;
+        text-align: center;
+    }
 
     .stButton>button {
         background-color: #2563EB;
