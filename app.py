@@ -8,48 +8,69 @@ st.set_page_config(
 
 st.markdown("""
 <style>
-.stButton button {
-    background-color: #2563EB;
+
+.stApp {
+    background-color: #0F172A;
     color: white;
-    border-radius: 10px;
+}
+
+h1 {
+    color: #22C55E;
+    text-align: center;
+    font-size: 50px;
+}
+
+textarea {
+    background-color: #1E293B !important;
+    color: white !important;
+}
+
+.stButton button {
+    background-color: #22C55E;
+    color: black;
+    border-radius: 12px;
     height: 50px;
     width: 100%;
     font-size: 18px;
     border: none;
+    font-weight: bold;
 }
+
+.card {
+    background-color: #1E293B;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown(
-    "<h1 style='color:#16A34A; text-align:center;'>📧 SIOE</h1>",
-    unsafe_allow_html=True
-)
+st.markdown("<h1>📧 SIOE</h1>", unsafe_allow_html=True)
 
-st.subheader("Sistema Inteligente de Organização de E-mails")
+st.markdown("""
+<div class="card">
+Sistema Inteligente de Organização de E-mails
+</div>
+""", unsafe_allow_html=True)
 
 email = st.text_area(
-    "Cole o conteúdo do e-mail:",
+    "Cole o e-mail:",
     height=200
 )
 
-if st.button("ANALISAR E-MAIL"):
+if st.button("ANALISAR"):
 
     texto = email.lower()
 
-    if "urgente" in texto or "agora" in texto or "imediato" in texto:
-        st.error("🔴 E-mail classificado como URGENTE")
-        st.write("Confirmar urgência antes da decisão.")
+    if "urgente" in texto or "agora" in texto:
+        st.error("🔴 URGENTE")
 
-    elif "senha" in texto or "clique no link" in texto or "download" in texto:
-        st.warning("⚠️ E-mail classificado como MALICIOSO")
-        st.write("Excluir ou reportar imediatamente.")
+    elif "senha" in texto or "link" in texto:
+        st.warning("⚠️ MALICIOSO")
 
-    elif "reunião" in texto or "prazo" in texto or "relatório" in texto:
-        st.info("🟡 E-mail classificado como IMPORTANTE")
-        st.write("Verificar prioridade.")
+    elif "prazo" in texto or "reunião" in texto:
+        st.info("🟡 IMPORTANTE")
 
     else:
-        st.success("🟢 E-mail classificado como NORMAL")
-        st.write("Responder quando possível.")
-
-st.caption("SIOE • Sistema Inteligente de Organização de E-mails")
+        st.success("🟢 NORMAL")
